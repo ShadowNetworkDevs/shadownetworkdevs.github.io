@@ -1,4 +1,12 @@
+
 [
+    {
+       "title": "Eclipse Client",
+       "version": "1.19-1.0.8",
+       "icon": "./assets/images/icons/norshare.png",
+       "link": "./mc/eclipse/",
+       "active": true
+    },
     {
        "title": "Astra Client",
        "version": "1.8.8-v1.5",
