@@ -42,7 +42,7 @@ function generateprofile(game) {
     if (game === 3 && selectedGame3) {selectedGame = JSON.parse(selectedGame3);  running = true;}; 
     if (!selectedGame4) {
         fetch("./assets/json/assisted.json").then((response) => response.json()).then((data) => {
-            selectedGame4 = JSON.stringify(data[0]); localStorage.setItem("assisted", selectedGame5);
+            selectedGame4 = JSON.stringify(data[0]); localStorage.setItem("assisted", selectedGame4);
         });
     };
     if (game === 4 && selectedGame4) {selectedGame = JSON.parse(selectedGame4);  running = true;}; 
@@ -73,7 +73,7 @@ function generategames(path) {
                 document.getElementById('playbutton').href = game.link;
                 if (path === "./assets/json/base.json") {selectedGame1 = JSON.stringify(game); localStorage.setItem("basegame", selectedGame1)};
                 if (path === "./assets/json/modded.json") {selectedGame2 = JSON.stringify(game); localStorage.setItem("moddedgame", selectedGame2)};
-                 if (path === "./assets/json/server.json") {selectedGame3 = JSON.stringify(game); localStorage.setItem("serverlist", selectedGame4)};
+                if (path === "./assets/json/server.json") {selectedGame3 = JSON.stringify(game); localStorage.setItem("serverlist", selectedGame4)};
                 if (path === "./assets/json/assisted.json") {selectedGame4 = JSON.stringify(game); localStorage.setItem("assisted", selectedGame3)};
                 dropdowntoggle();
             });
@@ -218,19 +218,6 @@ function moddededition(){
     document.getElementById('header5').style.display = 'none';
     document.getElementById('gtabs3').classList.add('selected');
 }
-function eaglercontrols(){
-    launcher = "./assets/json/assisted.json";
-    resetTabSelected();
-    generateprofile(3);
-    generategames(launcher);
-    generatelaunchers(launcher);
-    document.getElementById('game-bg').style.backgroundImage = 'url(./assets/images/controls-edition.jpg)';
-    document.getElementById('game-title').src = './assets/images/controls-title.png';
-    document.getElementById('gameedition').innerHTML = 'EAGLERCRAFT MOBILE/CONTROLLER';
-    document.getElementById('header2').style.display = 'none';
-    document.getElementById('header5').style.display = 'none';
-    document.getElementById('gtabs4').classList.add('selected');
-}
 function servers(){
     launcher = "./assets/json/server.json";
     resetTabSelected();
@@ -240,6 +227,19 @@ function servers(){
     document.getElementById('game-bg').style.backgroundImage = 'url(./assets/images/server-edition.jpg)';
     document.getElementById('game-title').src = './assets/images/server-title.png';
     document.getElementById('gameedition').innerHTML = 'EAGLERCRAFT SERVER LIST';
+    document.getElementById('header2').style.display = 'none';
+    document.getElementById('header5').style.display = 'none';
+    document.getElementById('gtabs4').classList.add('selected');
+}
+function eaglercontrols(){
+    launcher = "./assets/json/assisted.json";
+    resetTabSelected();
+    generateprofile(3);
+    generategames(launcher);
+    generatelaunchers(launcher);
+    document.getElementById('game-bg').style.backgroundImage = 'url(./assets/images/controls-edition.jpg)';
+    document.getElementById('game-title').src = './assets/images/controls-title.png';
+    document.getElementById('gameedition').innerHTML = 'EAGLERCRAFT MOBILE/CONTROLLER';
     document.getElementById('header2').style.display = 'none';
     document.getElementById('header5').style.display = 'none';
     document.getElementById('gtabs4').classList.add('selected');
