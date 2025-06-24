@@ -223,6 +223,19 @@ function eaglercontrols(){
     document.getElementById('header5').style.display = 'none';
     document.getElementById('gtabs4').classList.add('selected');
 }
+function serverlist(){
+    launcher = "./assets/json/server.json";
+    resetTabSelected();
+    generateprofile(3);
+    generategames(launcher);
+    generatelaunchers(launcher);
+    document.getElementById('game-bg').style.backgroundImage = 'url(./assets/images/server-edition.jpg)';
+    document.getElementById('game-title').src = './assets/images/server-title.png';
+    document.getElementById('gameedition').innerHTML = 'EAGLERCRAFT SERVER LIST';
+    document.getElementById('header2').style.display = 'none';
+    document.getElementById('header5').style.display = 'none';
+    document.getElementById('gtabs4').classList.add('selected');
+}
 
 // Header Options
 function playheader(){

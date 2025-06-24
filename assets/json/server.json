@@ -1,0 +1,23 @@
+[
+    {
+       "title": "Shadow Network",
+       "version": "Currently Closed",
+       "icon": "./assets/images/icons/dogos-mobile.png",
+       "link": "https://play.shadownetwork.shop",
+       "active": true
+    },
+    {
+       "title": "Red's Mobile UI",
+       "version": "1.8.8-v1.40",
+       "icon": "./assets/images/icons/reds-mobile.png",
+       "link": "./mc/1.8.8/?userscript=irv77-eaglercraft-mobile.js",
+       "active": false
+    },
+    {
+       "title": "Red's Controller Support",
+       "version": "1.8.8-v1.1",
+       "icon": "./assets/images/icons/reds-controller.png",
+       "link": "./mc/?userscript=irv77-eaglerconsole.js",
+       "active": false
+    }
+ ]
