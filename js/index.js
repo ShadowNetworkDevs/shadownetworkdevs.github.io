@@ -16,8 +16,8 @@ function errorNA(text) {
 // Last Played Game Option
 let selectedGame1 = localStorage.getItem("basegame");
 let selectedGame2 = localStorage.getItem("moddedgame");
-let selectedGame3 = localStorage.getItem("assisted");
-let selectedGame4 = localStorage.getItem("serverlist")
+let selectedGame3 = localStorage.getItem("serverlist");
+let selectedGame4 = localStorage.getItem("assisted")
 
 function generateprofile(game) {
     let selectedGame = "";
@@ -35,17 +35,17 @@ function generateprofile(game) {
     };
     if (game === 2 && selectedGame2) {selectedGame = JSON.parse(selectedGame2);  running = true;}; 
     if (!selectedGame3) {
-        fetch("./assets/json/assisted.json").then((response) => response.json()).then((data) => {
-            selectedGame3 = JSON.stringify(data[0]); localStorage.setItem("assisted", selectedGame3);
-        });
-    };
-    if (game === 4 && selectedGame4) {selectedGame = JSON.parse(selectedGame4);  running = true;}; 
-    if (!selectedGame5) {
         fetch("./assets/json/server.json").then((response) => response.json()).then((data) => {
-            selectedGame3 = JSON.stringify(data[0]); localStorage.setItem("serverlist", selectedGame5);
+            selectedGame3 = JSON.stringify(data[0]); localStorage.setItem("serverlist", selectedGame3);
         });
     };
     if (game === 3 && selectedGame3) {selectedGame = JSON.parse(selectedGame3);  running = true;}; 
+    if (!selectedGame4) {
+        fetch("./assets/json/assisted.json").then((response) => response.json()).then((data) => {
+            selectedGame4 = JSON.stringify(data[0]); localStorage.setItem("assisted", selectedGame5);
+        });
+    };
+    if (game === 4 && selectedGame4) {selectedGame = JSON.parse(selectedGame4);  running = true;}; 
     if (running === true) {
     document.getElementById('gametitle').innerHTML = selectedGame.title;
     document.getElementById('gameversion').innerHTML = selectedGame.version;
@@ -73,8 +73,8 @@ function generategames(path) {
                 document.getElementById('playbutton').href = game.link;
                 if (path === "./assets/json/base.json") {selectedGame1 = JSON.stringify(game); localStorage.setItem("basegame", selectedGame1)};
                 if (path === "./assets/json/modded.json") {selectedGame2 = JSON.stringify(game); localStorage.setItem("moddedgame", selectedGame2)};
-                if (path === "./assets/json/assisted.json") {selectedGame3 = JSON.stringify(game); localStorage.setItem("assisted", selectedGame3)};
-                if (path === "./assets/json/server.json") {selectedGame4 = JSON.stringify(game); localStorage.setItem("serverlist", selectedGame4)};
+                 if (path === "./assets/json/server.json") {selectedGame3 = JSON.stringify(game); localStorage.setItem("serverlist", selectedGame4)};
+                if (path === "./assets/json/assisted.json") {selectedGame4 = JSON.stringify(game); localStorage.setItem("assisted", selectedGame3)};
                 dropdowntoggle();
             });
         
@@ -231,7 +231,7 @@ function eaglercontrols(){
     document.getElementById('header5').style.display = 'none';
     document.getElementById('gtabs4').classList.add('selected');
 }
-function serverlist(){
+function servers(){
     launcher = "./assets/json/server.json";
     resetTabSelected();
     generateprofile(4);
