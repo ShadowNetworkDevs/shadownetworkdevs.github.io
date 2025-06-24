@@ -17,6 +17,7 @@ function errorNA(text) {
 let selectedGame1 = localStorage.getItem("basegame");
 let selectedGame2 = localStorage.getItem("moddedgame");
 let selectedGame3 = localStorage.getItem("assisted");
+let selectedGame4 = localStorage.getItem("serverlist")
 
 function generateprofile(game) {
     let selectedGame = "";
@@ -36,6 +37,12 @@ function generateprofile(game) {
     if (!selectedGame3) {
         fetch("./assets/json/assisted.json").then((response) => response.json()).then((data) => {
             selectedGame3 = JSON.stringify(data[0]); localStorage.setItem("assisted", selectedGame3);
+        });
+    };
+    if (game === 4 && selectedGame4) {selectedGame = JSON.parse(selectedGame4);  running = true;}; 
+    if (!selectedGame5) {
+        fetch("./assets/json/server.json").then((response) => response.json()).then((data) => {
+            selectedGame3 = JSON.stringify(data[0]); localStorage.setItem("serverlist", selectedGame5);
         });
     };
     if (game === 3 && selectedGame3) {selectedGame = JSON.parse(selectedGame3);  running = true;}; 
@@ -67,6 +74,7 @@ function generategames(path) {
                 if (path === "./assets/json/base.json") {selectedGame1 = JSON.stringify(game); localStorage.setItem("basegame", selectedGame1)};
                 if (path === "./assets/json/modded.json") {selectedGame2 = JSON.stringify(game); localStorage.setItem("moddedgame", selectedGame2)};
                 if (path === "./assets/json/assisted.json") {selectedGame3 = JSON.stringify(game); localStorage.setItem("assisted", selectedGame3)};
+                if (path === "./assets/json/server.json") {selectedGame4 = JSON.stringify(game); localStorage.setItem("serverlist", selectedGame4)};
                 dropdowntoggle();
             });
         
