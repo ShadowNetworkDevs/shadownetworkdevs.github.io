@@ -226,7 +226,7 @@ function eaglercontrols(){
 function serverlist(){
     launcher = "./assets/json/server.json";
     resetTabSelected();
-    generateprofile(3);
+    generateprofile(4);
     generategames(launcher);
     generatelaunchers(launcher);
     document.getElementById('game-bg').style.backgroundImage = 'url(./assets/images/server-edition.jpg)';
