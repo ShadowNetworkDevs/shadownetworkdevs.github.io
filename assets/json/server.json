@@ -1,20 +1,20 @@
 [
     {
        "title": "Shadow Network",
-       "version": "Currently Closed",
-       "icon": "./assets/images/icons/dogos-mobile.png",
-       "link": "https://play.shadownetwork.shop",
+       "version": "Currently Shut Down ",
+       "icon": "./assets/images/icons/shadow.png",
+       "link": "./assets/ips/shadow.html",
        "active": false
     },
     {
        "title": "Clever Teaching",
-       "version": "1.8.8-v1.40",
+       "version": "Survival Is A W",
        "icon": "./assets/images/icons/clever.png",
        "link": "./assets/ips/clever.html",
        "active": true
     },
     {
-       "title": "Not in use",
+       "title": "",
        "version": "",
        "icon": "./assets/images/icons/",
        "link": "./assets/ips/",
